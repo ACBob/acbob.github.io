@@ -1,12 +1,14 @@
 body {
 
-	background-image:url(background.png);
+	background-color:#000011;
+	color:#FFDDDD;
 
 }
 .title {
 
 	font-family:"Helvetica";
 	text-align:center;
+	color:FFDDDD;
 	
 }
 .sidebar {
@@ -14,8 +16,9 @@ body {
 	font-family:"Arial";
 	text-align:center;
 	width:20%;
+	color:FFDDDD;
 	max-width:150px;
-	background-color:#FFCFFF;
+	background-color:#111122;
 	float:left;
 	min-height:500px;
 
@@ -24,7 +27,8 @@ body {
 	
 	font-family:"Arial";
 	text-align:Center;
-	background-color:#D1FFD1;
+	background-color:#111122;
+	color:FFDDDD;
 	margin-right:50px;
 	margin-left:155px;
 	min-height:500px;
@@ -33,7 +37,7 @@ body {
 .footer {
 
 	text-align:Center;
-	background-color:#FFFFD1;
+	background-color:#111122;
 	min-height:10px;
 	padding:1px;
 
@@ -47,13 +51,14 @@ body {
 a:link {
 
     text-decoration:none;
+	color:#DDDDDD;
 
 }
 
 a:visited {
 
     text-decoration: none;
-	color:#000000;
+	color:#DDDDDD;
 
 }
 
