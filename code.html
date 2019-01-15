@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<!--If you are here because you pressed CTRL+U, get out of here. Otherwise stay.-->
+<html>
+
+<head>
+
+	<title>Golden Labs</title>
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+
+<body>
+	
+	<div>
+	
+		<div class="title">
+		
+			<img src="title.png">
+			<h1 id="best"><i>"Best website."</i></h1>
+	
+		</div>
+	
+		<div class="sidebar">
+	
+			<h3>Pages:</h3>
+		
+			<hr>
+		
+			<a href="index.html"><h4>Home Page</h4></a>
+			<a href="log.html"><h4>Change Log</h4></a>
+			<a href="goldminer.html"><h4>Gold Miner</h4></a>
+			<a href="portal.html"><h4>Actuating Lemons</h4></a>
+			<h4>Coding</h4>
+	
+		</div>
+		<!--amslrpw pmybq. ryic kc fmkc. rm rfc njyac g zcjmle. ucqr tgpeglgy.-->
+		<div class="content">
+	
+			<!--<h2>Some Title.</h2>!-->
+			<h3 id="title">Welcome to My coding Area.</h3>
+			<p id="btext">To access this you must first guess the first letter of "Bacon".</p>
+			<input id="b"><button onclick="go();" id="bbutton">Enter</button>
+			<div id="hidden" style="display:none;background-color:#737373;">
+			
+				<h3>website.programming.page.downloads</h3>
+				<div style="float:left;background-color:#515151;margin-left:25%">
+				
+					<h3>languages.Python</h3>
+					<hr>
+					<a href="fizzbuzz.py" download><h3>Fizz Buzz</h3></a>
+				
+				</div>
+				
+				<div style="float:right;background-color:#515151;margin-right:25%">
+				
+					<h3>languages.Other</h3>
+					<hr>
+					
+					
+				</div>
+		
+			</div>
+	
+		</div>
+		<div class="footer">
+	
+			<h6>This website was created with a brain. Learn HTML and use a brain today.</h6>
+
+		</div>
+	
+	</div>
+	<script>
+	
+	function go(){
+	if (document.getElementById("b").value.toLowerCase() == "b") {
+		document.getElementById("hidden").style.display = "block";
+		document.getElementById("bbutton").style.display = "none";
+		document.getElementById("btext").style.display = "none";
+		document.getElementById("b").style.display = "none";
+		document.getElementById("title").innerHTML = "Welcome to my Coding LAIR.";
+		document.getElementById("best").innerHTML = "<b><u>I think this is the best website because i made it and im very narcasistic.</u></b>";
+		}
+	}	
+		
+		
+	var input = document.getElementById("b");
+	input.addEventListener("keyup", function(event) {
+		event.preventDefault();
+		if (event.keyCode === 13) {
+			document.getElementById("bbutton").click();
+		}
+	});
+	
+	</script>
+</body>
+
+</html>

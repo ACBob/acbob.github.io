@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<!--If you are here because you pressed CTRL+U, get out of here. Otherwise stay.-->
+<html>
+
+<head>
+
+	<title>Golden Labs</title>
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+
+<body>
+	
+	<div>
+	
+		<div class="title">
+		
+			<img src="title.png">
+			<h1><i>"Best website."</i></h1>
+	
+		</div>
+	
+		<div class="sidebar">
+	
+			<h3>Pages:</h3>
+		
+			<hr>
+		
+			<a href="index.html"><h4>Home Page</h4></a>
+			<a href="log.html"><h4>Change Log</h4></a>
+			<h4>Gold Miner</h4>
+			<a href="portal.html"><h4>Actuating Lemons</h4></a>
+			<a href="code.html"><h4>Coding</h4></a>
+	
+		</div>
+		<!--amslrpw pmybq. ryic kc fmkc. rm rfc njyac g zcjmle. ucqr tgpeglgy.-->
+		<div class="content">
+	
+			<!--<h2>Some Title.</h2>!-->
+			<h3>"Gold Miner"</h3>
+			<p>Yes i ported the game to this re-design. :)</p>
+			<p>I don't think i'll fix the bugs. >:)</p>
+			<p>Although the gold looks nicer, im not making it transparent.</p>
+			<p>Hoo-rah! Saving system.</p> 
+			
+			<hr>
+			
+			<img src="gold.png" alt="gold" onclick="AddCookie()" width="64" height="64">
+			<p id="gold">0 Gold Peices.</p>
+			<p id="price">Upgrade at: 15 Gold.</p>
+			<p id="clicket">+1 Per Click.</p>
+			<button onclick="save()">Save.</button>
+			<button onclick="deletedata()">Reset.</button>
+	
+		</div>
+		<div class="footer">
+	
+			<h6>This website was created with a brain. Learn HTML and use a brain today.</h6>
+
+		</div>
+	
+	</div>
+<script>
+var cookie = document.cookie
+if (cookie == "") {
+	var goldvar = 0;
+	var upgradeprice = 15;
+	var click = 1;
+}
+else {
+var goldvar = Number(cookie.split(" ")[0])
+var upgradeprice = Number(cookie.split(" ")[2])
+var click = Number(cookie.split(" ")[1])
+}
+var over1000 = 0;
+var life = 1;
+document.getElementById("gold").innerHTML = goldvar + " Gold Peices"
+document.getElementById("price").innerHTML = "Upgrade at: " + upgradeprice + " Gold.";
+document.getElementById("clicket").innerHTML = "+" + click + " Per Click.";
+function AddCookie(){
+if (life = 1) {
+goldvar += click;
+document.getElementById("gold").innerHTML = goldvar + " Gold Peices.";
+if (goldvar > upgradeprice) {
+goldvar -= upgradeprice;
+document.getElementById("gold").innerHTML = goldvar + " Gold Peices.";
+upgradeprice = upgradeprice * 1.15;
+upgradeprice = Math.round(upgradeprice);
+document.getElementById("gold").innerHTML = goldvar + " Gold Peices.";
+document.getElementById("price").innerHTML = "Upgrade at: " + upgradeprice + " Gold.";
+click += 1;
+document.getElementById("clicket").innerHTML = "+" + click + " Per Click.";
+}
+if (goldvar > 1000) {
+if (over1000 = 0) {
+alert("You have over 1000 gold! Welldone.");
+}
+}
+if (goldvar > 999999) {
+alert("You have no life!");
+life = 0;
+}
+}
+if (life = 0) {
+alert("You have finished the game, go away.");
+}
+}
+function deletedata(){
+var retset = confirm("Are you sure?");
+if (retset == true) {
+	document.cookie = "";
+	goldvar = 0;
+	upgradeprice = 15;
+	click = 1;
+	document.getElementById("gold").innerHTML = goldvar + " Gold Peices"
+	document.getElementById("price").innerHTML = "Upgrade at: " + upgradeprice + " Gold.";
+	document.getElementById("clicket").innerHTML = "+" + click + " Per Click.";
+	}
+if (retset == false){
+	alert("Be careful where you click.")
+}
+
+}
+function save(){
+
+document.cookie = goldvar + " " + click + " " + upgradeprice
+alert("Saved with " + goldvar + " Gold.")
+
+}
+</script>
+</body>
+
+
+</html>
