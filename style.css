@@ -13,7 +13,7 @@ body {
 }
 .sidebar {
 
-	font-family:"Arial";
+	font-family:"Lucida Console";
 	text-align:center;
 	width:20%;
 	color:FFDDDD;
@@ -25,7 +25,7 @@ body {
 }
 .content {
 	
-	font-family:"Arial";
+	font-family:"Lucida Console";
 	text-align:Center;
 	background-color:#111122;
 	color:FFDDDD;
