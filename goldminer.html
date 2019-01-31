@@ -38,95 +38,68 @@
 	
 			<!--<h2>Some Title.</h2>!-->
 			<h3>"Gold Miner"</h3>
-			<p>Yes i ported the game to this re-design. :)</p>
-			<p>I don't think i'll fix the bugs. >:)</p>
-			<p>Although the gold looks nicer, im not making it transparent.</p>
-			<p>Hoo-rah! Saving system.</p> 
-			
+			<h4>This has gone through so many redesigns, i saw it fitting to fix it.</h4>
+			<!--I hate JS.!-->
 			<hr>
 			
-			<img src="images/gold.png" alt="gold" onclick="AddCookie()" width="64" height="64">
+			<img src="images/gold.png" alt="gold" onclick="Mine()" width="64" height="64">
 			<p id="gold">0 Gold Peices.</p>
-			<p id="price">Upgrade at: 15 Gold.</p>
+			<p id="price">Upgrade (15)</p>
 			<p id="clicket">+1 Per Click.</p>
 			<button onclick="save()">Save.</button>
 			<button onclick="deletedata()">Reset.</button>
 	
 		</div>
 		<div class="footer">
-	
+		
 			<h6>This website was created with a brain. Learn HTML and use a brain today.</h6>
 
 		</div>
 	
 	</div>
 <script>
-var cookie = document.cookie
-if (cookie == "") {
-	var goldvar = 0;
-	var upgradeprice = 15;
-	var click = 1;
-}
-else {
-var goldvar = Number(cookie.split(" ")[0])
-var upgradeprice = Number(cookie.split(" ")[2])
-var click = Number(cookie.split(" ")[1])
-}
-var over1000 = 0;
-var life = 1;
-document.getElementById("gold").innerHTML = goldvar + " Gold Peices"
-document.getElementById("price").innerHTML = "Upgrade at: " + upgradeprice + " Gold.";
-document.getElementById("clicket").innerHTML = "+" + click + " Per Click.";
-function AddCookie(){
-if (life = 1) {
-goldvar += click;
-document.getElementById("gold").innerHTML = goldvar + " Gold Peices.";
-if (goldvar > upgradeprice) {
-goldvar -= upgradeprice;
-document.getElementById("gold").innerHTML = goldvar + " Gold Peices.";
-upgradeprice = upgradeprice * 1.15;
-upgradeprice = Math.round(upgradeprice);
-document.getElementById("gold").innerHTML = goldvar + " Gold Peices.";
-document.getElementById("price").innerHTML = "Upgrade at: " + upgradeprice + " Gold.";
-click += 1;
-document.getElementById("clicket").innerHTML = "+" + click + " Per Click.";
-}
-if (goldvar > 1000) {
-if (over1000 = 0) {
-alert("You have over 1000 gold! Welldone.");
-}
-}
-if (goldvar > 999999) {
-alert("You have no life!");
-life = 0;
-}
-}
-if (life = 0) {
-alert("You have finished the game, go away.");
-}
-}
-function deletedata(){
-var retset = confirm("Are you sure?");
-if (retset == true) {
-	document.cookie = "";
-	goldvar = 0;
-	upgradeprice = 15;
-	click = 1;
-	document.getElementById("gold").innerHTML = goldvar + " Gold Peices"
-	document.getElementById("price").innerHTML = "Upgrade at: " + upgradeprice + " Gold.";
-	document.getElementById("clicket").innerHTML = "+" + click + " Per Click.";
+	//Re-written at 19/01/2019, God do i prefer python.
+	var cookie = document.cookie
+	if (cookie == "") { //Keeping the save system, if it works don't break it.
+		var goldvar = 0;
+		var upgrades = 0;
+		var upgradeprice
+		var click = 1;
 	}
-if (retset == false){
-	alert("Be careful where you click.")
-}
-
-}
-function save(){
-
-document.cookie = goldvar + " " + click + " " + upgradeprice
-alert("Saved with " + goldvar + " Gold.")
-
-}
+	else {
+		var goldvar = Number(cookie.split(" ")[0]);
+		var upgrades = Number(cookie.split(" ")[2]);
+		var click = Number(cookie.split(" ")[1]);
+	}
+	var vgold = document.getElementById("gold");
+	var completed = false;
+	function Mine() //I think it's better to call gold gold, and a browser cookie a cookie.
+	{
+		if(completed == false) 
+		{
+			goldvar += click + upgrades;
+			vgold.innerHTML = goldvar + " Gold Peices";
+		}
+	}
+	function deletedata(){
+	var retset = confirm("Are you sure?");
+	if (retset == true) {
+		document.cookie = "";
+		goldvar = 0;
+		upgrades = 0;
+		click = 1;
+		document.getElementById("gold").innerHTML = goldvar + " Gold Peices";
+		document.getElementById("price").innerHTML = "Pickaxe (15)";
+		document.getElementById("clicket").innerHTML = "+" + click + " Per Click.";
+		}
+	if (retset == false){
+		alert("Be careful where you click.");
+	}
+	}
+	function save(){
+		document.cookie = goldvar + " " + click + " " + upgrades;
+		alert("Saved with " + goldvar + " Gold.");
+	}
 </script>
 </body>
 
